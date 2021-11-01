@@ -1,0 +1,44 @@
+ALGORITHM first_solution
+VAR
+    arr1, arr2 : ARRAY_OF INTEGER[5];
+    i, j, sum: INTEGER := 0;
+    found : BOOLEAN;
+BEGIN
+    write(arr1[12, 13, 6, 10]);
+    read(arr1[13, 10, 16, 15]);
+    write(arr2);
+    read(arr2);
+    FOR i FROM 0 TO arr1.length-1 STEP i++  DO
+    found:= false;
+        FOR j FROM 0 TO arr2.length-1 STEP j++  DO
+            IF (arr1[i]== arr2[j]) THEN
+                found:= true;
+            END_IF
+        END_FOR
+    END_FOR
+    IF (found:= true) THEN
+        sum := sum + NewArr[k];
+    END_IF
+    write(sum);
+END
+
+ALGORITHM second_solution
+VAR
+    arr1, arr2 : ARRAY_OF INTEGER[5];
+    i, j, sum: INTEGER := 0;
+    found : BOOLEAN;
+BEGIN
+    FOR j FROM 0 TO arr2.length-1 STEP j++  DO
+        found:= false;
+        FOR i FROM 0 TO arr1.length-1 STEP i++ DO
+            IF (arr1[i]== arr2[j]) THEN
+                found:= true;
+                break;
+            END_IF
+            IF (found) THEN
+                sum:= sum+ arr2[j];
+            END_IF
+        END_FOR
+    END_FOR
+    write (sum);
+END
